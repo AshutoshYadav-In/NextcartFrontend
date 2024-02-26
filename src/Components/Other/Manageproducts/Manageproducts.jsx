@@ -32,10 +32,16 @@ function Manageproducts() {
   //fetch all data
   const fetchData = async () => {
     try {
+      SetLoading(true)
       const response = await axios.get(`${BASE_URL}/api/admin/products/all`);
       Setproducts(response.data.filteredProducts);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      toast.error(`Error fetching data`, {
+        autoClose: 2000,
+      });
+    }
+    finally{
+      SetLoading(false)
     }
   };
   useEffect(() => {

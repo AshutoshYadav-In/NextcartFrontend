@@ -32,6 +32,8 @@ function Singleproduct() {
         };
         fetchData();
     }, [pathname]);
+    
+    //handlecart 
     const handleAddtocart = async()=>{
       if (LoginRole == "admin" || LoginRole == "guest") {
         toast.warn('Login from customer account', {
