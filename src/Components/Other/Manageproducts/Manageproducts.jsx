@@ -116,6 +116,9 @@ function Manageproducts() {
   const handleImageRemove = () => {
     setImageHolder(null);
     setImage(null);
+    if (inputRef.current) {
+      inputRef.current.value = null;
+  }
   }
   //handle toggle for delete
   const handleToggleforDelete = (productid) => {

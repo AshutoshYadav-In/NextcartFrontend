@@ -30,8 +30,11 @@ function Addproduct() {
     const handleImageRemove= ()=>{
         setImageHolder(null);
         setImage(null);
+        if (inputRef.current) {
+            inputRef.current.value = null;
+        }
       }
-    const handleFileChange = (e) => {
+      const handleFileChange = (e) => {
         if (e.target.files[0]) {
             const selectedImage = e.target.files[0];
             const imageUrl = URL.createObjectURL(selectedImage);
